@@ -1,0 +1,223 @@
+import { Image, Notes } from 'mdx-deck'
+import ionic from '../theme/ionic'
+import Provider from '../layout/provider'
+import MhSplit from '../layout/split'
+import ColorLayout from '../layout/color'
+import {  CodeSurfer } from 'code-surfer';
+import {  vsDark } from '@code-surfer/themes';
+import CodeSandbox from '../components/CodeSandbox'
+import { Tweet } from 'react-twitter-widgets'
+
+export const themes = [ionic, Provider];
+
+<br/>
+
+<img src="cap-logo.png"  width="800"/>
+
+<p>Rethinking Cross Platform</p>
+
+[Mike Hartington | @mhartington](https://twitter.com/mhartington)
+
+---
+
+### Ideas
+- History lesson
+- Current landscape
+- Capacitor
+
+---
+
+
+### Native SDKs
+
+- Original iPhone SDK released 2008
+- Android SDK released 2009
+- Roughly 10 years of Native tooling
+
+---
+
+#### Day One of Native tools...there have been hackers
+
+---
+
+<img src="cordova-logo.png"  width="800"/>
+
+---
+
+#### Write once, run anywhere
+- Probably the first?
+- Bridge between native and a browser
+- Polyfill for browser/webviews
+
+<Appear><p> Goal: Ceases to exist!  </p></Appear>
+
+---
+
+<CodeSurfer>
+
+```javascript
+document.addEventListener('deviceready',function(){
+  // Call your native code for startup
+
+})
+
+```
+
+```javascript
+document.addEventListener('deviceready',function(){
+  // Call your native code for startup
+
+})
+
+navigator.camera.getPicture(onSuccess, onFail, { quality: 25,
+    destinationType: Camera.DestinationType.DATA_URL
+});
+
+function onSuccess(imageData) {
+    var image = document.getElementById('myImage');
+    image.src = "data:image/jpeg;base64," + imageData;
+}
+
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
+
+```
+</CodeSurfer>
+
+---
+
+- iOS, Android, Windows, Electron, MacOS
+- Huge Community of Plugins
+- Some edge cases :upside_down_face:
+
+---
+
+### Some Downsides...
+- Custom tooling for everything
+- Volatile Native Projects
+- Overall Project health
+
+---
+
+### React Native
+
+---
+
+#### Learn once, write anywhere
+- "Yo dawg, I heard you like react"
+- React bindings for native controls
+- All UI is generated at run time
+- expo is pretty cool
+
+---
+
+<CodeSurfer>
+
+```js
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
+
+class HelloWorld extends Component {
+  render() {
+    return (
+      <View>
+        <Text> Hello World </Text>
+      </View>
+    );
+  }
+}
+```
+
+```js 1:18
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
+
+// https://docs.expo.io/versions/latest/sdk/camera/
+import { Camera } from 'expo-camera';
+
+class HelloWorld extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1 }}>
+        <Camera
+          style={{ flex: 1 }}
+          type={Camera.Constants.Type.back,}>
+        </Camera>
+      </View>
+    );
+  }
+}
+```
+
+</CodeSurfer>
+
+---
+
+### Downsides
+- ~~Facebook~~ FACEBOOK...
+- Smaller Community
+- Varying quality of plugins
+- A lot of native knowledge is needed
+
+---
+
+#### Not as cross platform <br/> as advertised
+
+---
+
+<img src="cap-logo.png"  width="800"/>
+
+---
+
+### What is Cap?
+- Best of both worlds
+- Web centric on one end
+- Native tooling on the other
+
+---
+
+- Does not focus on UI*
+- API from JS is more "shape"
+- Proxies map to Native APIs
+
+---
+
+#### **Aggressive Version Support**
+- Android: API 21(5.0) and up
+- iOS: Last two versions (12 and 13)
+
+---
+
+### Usage
+
+_AKA: Demo Time_
+
+---
+
+### PWA Support
+
+---
+
+#### Supplied via Web Components
+
+- Custom UI/Controls for Web
+- Same API, web UI stays on the web
+- Optional, so install as needed
+
+---
+
+### Platforms
+- iOS
+- Android
+- Web
+- Electron
+
+---
+
+### Thanks
+
+[Mike Hartington | @mhartington](https://twitter.com/mhartington)
+
+#### `</html>`
+
