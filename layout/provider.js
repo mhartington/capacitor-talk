@@ -16,7 +16,7 @@ function Provider(props) {
           zIndex: 1
         }}
       />
-      {props.children}
+          {props.children}
       {deck.index !== 0 && deck.mode !== 'PRESENTER' ? (
         <div
           css={{

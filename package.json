@@ -24,11 +24,14 @@
     "@emotion/styled": "10.0.23",
     "@theme-ui/prism": "0.2.46",
     "code-surfer": "3.0.0-beta.1",
+    "framer-motion": "1.8.3",
     "gatsby": "2.17.16",
     "gatsby-plugin-catch-links": "2.1.17",
     "gatsby-theme-mdx-deck": "^3.0.13",
     "react": "16.12.0",
     "react-dom": "16.12.0",
+    "react-pose": "4.0.10",
+    "react-transition-group": "4.3.0",
     "react-twitter-widgets": "1.7.1"
   }
 }
