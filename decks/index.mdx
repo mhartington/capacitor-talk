@@ -1,13 +1,13 @@
-import { Image, Notes } from 'mdx-deck'
-import ionic from '../theme/ionic'
-import Provider from '../layout/provider'
-import MhSplit from '../layout/split'
-import ColorLayout from '../layout/color'
-import {  CodeSurfer } from 'code-surfer';
-import {  vsDark } from '@code-surfer/themes';
-import CodeSandbox from '../components/CodeSandbox'
-import { Tweet } from 'react-twitter-widgets'
-import * as mdxThemes from 'mdx-deck/themes'
+import { Image, Notes } from 'mdx-deck';
+import ionic from '../theme/ionic';
+import Provider from '../layout/provider';
+import MhSplit from '../layout/split';
+import ColorLayout from '../layout/color';
+import { CodeSurfer } from 'code-surfer';
+import { vsDark } from '@code-surfer/themes';
+import CodeSandbox from '../components/CodeSandbox';
+import { Tweet } from 'react-twitter-widgets';
+import * as mdxThemes from 'mdx-deck/themes';
 export const themes = [ionic, Provider];
 
 ## Rethinking Cross <br/> Platform Development
@@ -24,7 +24,6 @@ export const themes = [ionic, Provider];
 
 ---
 
-
 ### Native SDKs
 
 - Original iPhone SDK released 2008
@@ -37,55 +36,61 @@ export const themes = [ionic, Provider];
 
 ---
 
-<img src="cordova-logo.png"  width="800"/>
+<img src="/cordova-logo.png" width="800" />
 
 ---
 
 #### Write once, run anywhere
+
 - Probably the first?
 - Bridge between native and a browser
 - Polyfill for browser/webviews
 
-<Appear><p> Goal: Ceases to exist!  </p></Appear>
+<Appear>
+  <p> Goal: Ceases to exist! </p>
+</Appear>
 
 ---
 
-<img src="hybrid-layout.png" style="height: 80%; width: 80%; object-fit: contain" />
+<img
+  src="/hybrid-layout.png"
+  style="height: 80%; width: 80%; object-fit: contain"
+/>
 
 ---
 
 <CodeSurfer>
 
-```javascript
 
-navigator.camera.getPicture(onSuccess, onFail, { quality: 25,
-    destinationType: Camera.DestinationType.DATA_URL
+```javascript
+navigator.camera.getPicture(onSuccess, onFail, {
+  quality: 25,
+  destinationType: Camera.DestinationType.DATA_URL,
 });
 
 function onSuccess(imageData) {
-    var image = document.getElementById('myImage');
-    image.src = "data:image/jpeg;base64," + imageData;
+  var image = document.getElementById('myImage');
+  image.src = 'data:image/jpeg;base64,' + imageData;
 }
 
 function onFail(message) {
-    alert('Failed because: ' + message);
+  alert('Failed because: ' + message);
 }
-
 ```
 
 ```javascript
-document.addEventListener('deviceready',function(){
+document.addEventListener('deviceready', function () {
   // Call your native code for startup
-
-})
-
+});
 ```
 
 </CodeSurfer>
 
+
 ---
 
 ### Times were good!
+
 - iOS, Android, Windows, Electron, MacOS
 - Huge Community of Plugins
 - Some edge cases :upside_down_face:
@@ -93,6 +98,7 @@ document.addEventListener('deviceready',function(){
 ---
 
 ### Some Downsides...
+
 - Custom tooling for everything
 - Volatile Native Projects
 - Overall Project health
@@ -104,18 +110,22 @@ document.addEventListener('deviceready',function(){
 ---
 
 #### Learn once, write anywhere
+
 - Promise of "truly native" App
 - Abstractions for native controls
 - All UI is generated at run time
 
 ---
 
-
-<img src="rn-breakdown.png" style="height: 80%; width: 80%; object-fit: contain"  />
+<img
+  src="/rn-breakdown.png"
+  style="height: 80%; width: 80%; object-fit: contain"
+/>
 
 ---
 
 <CodeSurfer>
+
 
 ```js
 import React, { Component } from 'react';
@@ -155,9 +165,11 @@ class HelloWorld extends Component {
 
 </CodeSurfer>
 
+
 ---
 
 ### Downsides
+
 - Corporate driven development
 - Smaller Community
 - Varying quality of plugins
@@ -169,22 +181,27 @@ class HelloWorld extends Component {
 
 ---
 
-<img src="cap-logo.png"  style="max-width: 800px; width: 80vw"/>
+<img src="/cap-logo.png" style="max-width: 800px; width: 80vw" />
 
 ---
 
 ### What is Cap?
+
 - Best of both worlds
 - Web centric on one end
 - Native tooling on the other
 
 ---
 
-<img src="hybrid-layout.png" style="height: 80%; width: 80%; object-fit: contain" />
+<img
+  src="/hybrid-layout.png"
+  style="height: 80%; width: 80%; object-fit: contain"
+/>
 
 ---
 
 ### Keep in mind
+
 - BYOC: Bring your own Components
 - API is not 1:1 to standard Web APIs
 - Runtime/bridge is loads instantly
@@ -192,6 +209,7 @@ class HelloWorld extends Component {
 ---
 
 ### "Aggressive Version Support"
+
 - Android: API 21(5.0) and up
 - iOS: Last two versions (12 and 13)
 
@@ -203,21 +221,21 @@ _AKA: Demo Time_
 
 ---
 
-### PWA Support
+### What about the web?
 
 ---
 
-#### Supplied via Web Components
+#### Support for PWAs baked in
 
-- Custom UI/Controls for Web
-- Same API, web UI stays on the web
+- APIs swap out between platforms
+- Native-like UI can be supplied (@ionic/pwa-elements)
 - Optional, so install as needed
 
 ---
 
 ### Platforms
 
-iOS, Android, Web, Electron
+iOS, Android, Web
 
 ---
 
@@ -242,4 +260,3 @@ ng add @capacitor/angular
 [Mike Hartington | @mhartington](https://twitter.com/mhartington)
 
 #### `</html>`
-
